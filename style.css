@@ -1,18 +1,18 @@
-:root {
-  --modal-duration: 1s;
-  --primary-color: #30336b;
-  --secondary-color: #be2edd;
-}
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 * {
   box-sizing: border-box;
 }
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
+  transition: transform 0.3s ease;
+}
+body.show-nav {
+  transform: translateX(200px);
 }
 nav {
-  background-color: var(--primary-color);
-  border-right: 2px solid rgb(200, 200, 200);
+  background-color:#30336b ;
+  border-right: 2px solid rgba(200, 200, 200, 0.1);
   color: #fff;
   position: fixed;
   top: 0;
@@ -22,13 +22,13 @@ nav {
   z-index: 100;
   transform: translateX(-100%);
 }
-nav .logo {
+nav .main {
   padding: 30px 0;
   text-align: center;
 }
-nav .logo img {
-  width: 75px;
+nav .main img {
   height: 75px;
+  width: 75px;
   border-radius: 50%;
 }
 nav ul {
@@ -50,93 +50,101 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
-header{
-  background-color: var(--primary-color);
+header {
+  background-color: #30336b;
   color: #fff;
   font-size: 130%;
   position: relative;
   padding: 40px 15px;
   text-align: center;
 }
-header h1{
+header h1 {
   margin: 0;
 }
-header p{
+header p {
   margin: 30px 0;
 }
-button ,
-input[type="submit"]{
-  background-color: var(--secondary-color);
+button,
+input[type="submit"] {
+  background-color: #be2edd;
   border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
 }
-button:focus{
-  outline:none ;
+button:focus {
+  outline: none;
 }
-.toggle{
-  background-color: rgba(0,0, 0,0.3);
+.threeLines {
+  background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 20px;
   left: 20px;
 }
-.cta-btn{
+.signup-button {
   padding: 12px 30px;
   font-size: 20px;
 }
-.container{
+.secMain {
   padding: 15px;
   margin: 0 auto;
   max-width: 100%;
   width: 800px;
 }
-.modal-container{
+.modal-secMain {
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
   position: fixed;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
 }
-.modal{
+.modal-secMain.show-modal {
+  display: block;
+}
+.modal {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
-  transform: translate(-50% , -50%);
+  animation-name: modalopen;
+  animation-duration: 1s;
 }
-.modal-header{
-  background-color: var(--primary-color);
+.modal-header {
+  background: #30336b;
   color: #fff;
   padding: 15px;
 }
-.modal-header h3{
+.modal-header h3 {
   margin: 0;
   border-bottom: 1px solid #333;
 }
-.modal-content{
+.modal-content {
   padding: 20px;
 }
-.modal-form div{
+.modal-form div {
   margin: 15px 0;
 }
-.modal-form label{
+.modal-form label {
   display: block;
   margin-bottom: 5px;
 }
-.modal-form .form-input{
-  padding: 8px;
+.modal-form .form-input {
+  padding: 10px;
   width: 100%;
 }
-.close-btn{
+.close-btn {
   background: transparent;
-  font-size: 25px;
+  font-size: 30px;
   position: absolute;
   top: 0;
   right: 0;
-  cursor: pointer;
-}
+ }
