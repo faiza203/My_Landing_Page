@@ -64,8 +64,7 @@ header h1 {
 header p {
   margin: 30px 0;
 }
-button,
-input[type="submit"] {
+button , input[type="submit"]{
   background-color: #be2edd;
   border: 0;
   border-radius: 5px;
